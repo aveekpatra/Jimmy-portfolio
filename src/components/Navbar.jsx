@@ -5,15 +5,18 @@ const Navbar = ({ navOpen }) => {
   const [activeLinkIndex, setActiveLinkIndex] = useState(0);
   const lastActiveLink = useRef(null);
   const activeBox = useRef(null);
-  const scrollTimeoutRef = useRef(null);
+  // When true, real‑time scroll updates are skipped (because a nav link was clicked)
+  const skipScrollUpdateRef = useRef(false);
+  // Store the target index when a nav link is clicked.
+  const navTargetIndexRef = useRef(null);
+  // Cache DOM elements for each section.
   const sectionsRef = useRef([]);
 
-  // Define nav items and their corresponding section anchors.
   const navItems = [
     { label: "Home", link: "#home" },
     { label: "About", link: "#about" },
     { label: "Skills", link: "#skill" },
-    { label: "Work", link: "#work" },
+    { label: "Projects", link: "#work" },
     { label: "Contact", link: "#contact" },
   ];
 
@@ -28,72 +31,78 @@ const Navbar = ({ navOpen }) => {
     }
   };
 
-  // On mount, cache the DOM elements for each section.
+  // On mount, cache the section DOM elements.
   useEffect(() => {
     sectionsRef.current = navItems.map((item) =>
       document.querySelector(item.link)
     );
   }, [navItems]);
 
-  // Recalculate active-box position on window resize.
+  // Recalculate the active box on window resize.
   useEffect(() => {
     initActiveBox();
     window.addEventListener("resize", initActiveBox);
     return () => window.removeEventListener("resize", initActiveBox);
   }, []);
 
-  // Update active link on click.
+  // When a nav link is clicked, record the target index and "lock" scroll updates.
   const activeCurrentLink = (index) => {
+    skipScrollUpdateRef.current = true;
+    navTargetIndexRef.current = index;
     setActiveLinkIndex(index);
   };
 
-  // Debounced scroll listener.
+  // Scroll event: update active link in real time (if not skipping)
   useEffect(() => {
     const handleScroll = () => {
-      // Clear any existing timer so we wait until scrolling stops.
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current);
-      }
-      // Set a new timer (150ms delay) after which we calculate the active section.
-      scrollTimeoutRef.current = setTimeout(() => {
-        const sections = sectionsRef.current;
-        let closestIndex = 0;
-        let closestDistance = Infinity;
-        // Use the vertical center of the viewport as a reference.
-        const viewportCenter = window.innerHeight / 2;
-
-        sections.forEach((section, index) => {
-          if (section) {
-            const rect = section.getBoundingClientRect();
-            // Calculate the section’s center
-            const sectionCenter = rect.top + rect.height / 2;
-            const distance = Math.abs(sectionCenter - viewportCenter);
-            if (distance < closestDistance) {
-              closestDistance = distance;
-              closestIndex = index;
-            }
+      if (skipScrollUpdateRef.current) {
+        // If we're in nav-click mode, check if the target section is nearly in view.
+        const targetIndex = navTargetIndexRef.current;
+        const targetSection = sectionsRef.current[targetIndex];
+        if (targetSection) {
+          const rect = targetSection.getBoundingClientRect();
+          // If the top of the target section is between 0 and 30% of the viewport height,
+          // assume the target is reached and re-enable real-time updates.
+          if (rect.top >= 0 && rect.top < window.innerHeight * 0.3) {
+            skipScrollUpdateRef.current = false;
+          } else {
+            // Otherwise, ignore scroll updates (so intermediate sections don’t override the nav click)
+            return;
           }
-        });
-        setActiveLinkIndex(closestIndex);
-      }, 150);
+        }
+      }
+
+      // Real-time update when manually scrolling:
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+      const viewportCenter = window.innerHeight / 2;
+
+      sectionsRef.current.forEach((section, index) => {
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          // Calculate the section's center relative to the viewport.
+          const sectionCenter = rect.top + rect.height / 2;
+          const distance = Math.abs(sectionCenter - viewportCenter);
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestIndex = index;
+          }
+        }
+      });
+      setActiveLinkIndex(closestIndex);
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current);
-      }
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Update the active-box position whenever the active link changes.
+  // Whenever the active link changes, update the highlight box.
   useEffect(() => {
     initActiveBox();
   }, [activeLinkIndex]);
 
   return (
-    <nav className={"navbar " + (navOpen ? "active" : "")}>
+    <nav className={`navbar ${navOpen ? "active" : ""}`}>
       {navItems.map(({ label, link }, index) => (
         <a
           href={link}
