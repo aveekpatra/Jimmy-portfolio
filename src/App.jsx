@@ -61,7 +61,6 @@ const App = () => {
         <section id="work">
           <Work />
         </section>
-        
         <section id="contact">
           <Contact />
         </section>

@@ -2,13 +2,25 @@ import { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 const Navbar = ({ navOpen }) => {
-  const [activeLinkIndex, setActiveLinkIndex] = useState(0); // State to track the current section in view
-  const lastActiveLink = useRef();
-  const activeBox = useRef();
+  const [activeLinkIndex, setActiveLinkIndex] = useState(0);
+  const lastActiveLink = useRef(null);
+  const activeBox = useRef(null);
+  const scrollTimeoutRef = useRef(null);
+  const sectionsRef = useRef([]);
 
+  // Define nav items and their corresponding section anchors.
+  const navItems = [
+    { label: "Home", link: "#home" },
+    { label: "About", link: "#about" },
+    { label: "Skills", link: "#skill" },
+    { label: "Work", link: "#work" },
+    { label: "Contact", link: "#contact" },
+  ];
+
+  // Update the "active-box" position to match the active link.
   const initActiveBox = () => {
     const activeLink = lastActiveLink.current;
-    if (activeLink) {
+    if (activeLink && activeBox.current) {
       activeBox.current.style.top = activeLink.offsetTop + "px";
       activeBox.current.style.left = activeLink.offsetLeft + "px";
       activeBox.current.style.width = activeLink.offsetWidth + "px";
@@ -16,54 +28,68 @@ const Navbar = ({ navOpen }) => {
     }
   };
 
+  // On mount, cache the DOM elements for each section.
+  useEffect(() => {
+    sectionsRef.current = navItems.map((item) =>
+      document.querySelector(item.link)
+    );
+  }, [navItems]);
+
+  // Recalculate active-box position on window resize.
   useEffect(() => {
     initActiveBox();
     window.addEventListener("resize", initActiveBox);
     return () => window.removeEventListener("resize", initActiveBox);
   }, []);
 
-  // Update the active link on click
+  // Update active link on click.
   const activeCurrentLink = (index) => {
     setActiveLinkIndex(index);
   };
 
-  // Define nav items and their corresponding sections
-  const navItems = [
-    { label: "Home", link: "#home" },
-    { label: "About", link: "#about" },
-    { label: "Skills", link: "#skill" },
-    { label: "Work", link: "#work" },
-    // { label: "Reviews", link: "#reviews" },
-    { label: "Contact", link: "#contact" },
-  ];
-
-  // Scroll observer to detect the active section in view
+  // Debounced scroll listener.
   useEffect(() => {
-    const sections = navItems.map((_, i) =>
-      document.querySelector(navItems[i].link)
-    );
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = sections.indexOf(entry.target);
-            setActiveLinkIndex(index); // Update active section
+    const handleScroll = () => {
+      // Clear any existing timer so we wait until scrolling stops.
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+      // Set a new timer (150ms delay) after which we calculate the active section.
+      scrollTimeoutRef.current = setTimeout(() => {
+        const sections = sectionsRef.current;
+        let closestIndex = 0;
+        let closestDistance = Infinity;
+        // Use the vertical center of the viewport as a reference.
+        const viewportCenter = window.innerHeight / 2;
+
+        sections.forEach((section, index) => {
+          if (section) {
+            const rect = section.getBoundingClientRect();
+            // Calculate the section’s center
+            const sectionCenter = rect.top + rect.height / 2;
+            const distance = Math.abs(sectionCenter - viewportCenter);
+            if (distance < closestDistance) {
+              closestDistance = distance;
+              closestIndex = index;
+            }
           }
         });
-      },
-      {
-        threshold: [0.5], // Multiple thresholds to cover various section sizes
+        setActiveLinkIndex(closestIndex);
+      }, 150);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
       }
-    );
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    };
   }, []);
 
-  // Update `active-box` position based on the active link
+  // Update the active-box position whenever the active link changes.
   useEffect(() => {
-    if (lastActiveLink.current) {
-      initActiveBox();
-    }
+    initActiveBox();
   }, [activeLinkIndex]);
 
   return (
@@ -71,8 +97,8 @@ const Navbar = ({ navOpen }) => {
       {navItems.map(({ label, link }, index) => (
         <a
           href={link}
-          key={index}
-          ref={index === activeLinkIndex ? lastActiveLink : null} // Assign ref to the active link
+          key={label}
+          ref={index === activeLinkIndex ? lastActiveLink : null}
           className={`nav-link ${index === activeLinkIndex ? "active" : ""}`}
           onClick={() => activeCurrentLink(index)}
         >

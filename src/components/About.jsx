@@ -20,6 +20,12 @@ const About = () => {
             Combining creativity and technical expertise. I transform your
             vision into digital masterpiece that excels in both appearance and
             performance.
+            <br />
+            <br />
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis
+            explicabo iste fuga aliquid dolor tempora aut at qui excepturi hic!
+            Voluptates fugit placeat natus alias reprehenderit sint assumenda
+            quam mollitia.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 md:gap-7">
