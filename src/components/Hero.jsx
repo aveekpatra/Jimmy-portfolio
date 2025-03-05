@@ -1,14 +1,11 @@
-
-
 /**
  * Components
  */
 import { ButtonPrimary, ButtonOutline } from "./Button";
 
-
 const Hero = () => {
   return (
-    <section id="home" className="pt-28 lg:pt-36 h-screen">
+    <section id="home" className="pt-28 lg:pt-36 lg:h-screen">
       <div className="container items-center lg:grid lg:grid-cols-2 lg:gap-10">
         <div>
           <div className="flex items-center gap-3">
@@ -59,6 +56,6 @@ const Hero = () => {
       </div>
     </section>
   );
-}
+};
 
-export default Hero
+export default Hero;
