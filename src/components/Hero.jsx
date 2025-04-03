@@ -2,56 +2,86 @@
  * Components
  */
 import { ButtonPrimary, ButtonOutline } from "./Button";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 const Hero = () => {
-  return (
-    <section id="home" className="pt-28 lg:pt-36 lg:h-screen">
-      <div className="container items-center lg:grid lg:grid-cols-2 lg:gap-10">
-        <div>
-          <div className="flex items-center gap-3">
-            {/* <figure className="img-box w-9 h-9 rounded-lg">
-              <img
-                src="/images/avatar-1.jpg"
-                width={40}
-                height={40}
-                alt="Aveek Patra portrait"
-                className="img-cover"
-              />
-            </figure> */}
+  const particlesRef = useRef(null);
 
-            <div className="flex items-center gap-1.5 text-zinc-400 text-sm tracking-wide ml-1">
-              Available for work
-              <span className="relative w-2 h-2 rounded-full bg-emerald-400">
-                <span className="absolute inset-0 rounded-full bg-emerald-400 animate-ping"></span>
-              </span>
-            </div>
+  useEffect(() => {
+    const particlesContainer = particlesRef.current;
+    const particles = Array.from(particlesContainer.children);
+
+    // Set initial random positions for particles
+    particles.forEach((particle) => {
+      gsap.set(particle, {
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        opacity: Math.random() * 0.5 + 0.2,
+      });
+    });
+
+    // Animate particles
+    particles.forEach((particle) => {
+      animateParticle(particle);
+    });
+
+    function animateParticle(particle) {
+      gsap.to(particle, {
+        x: `+=${Math.random() * 100 - 50}`,
+        y: `+=${Math.random() * 100 - 50}`,
+        opacity: Math.random() * 0.5 + 0.2,
+        duration: Math.random() * 4 + 3,
+        ease: "sine.inOut",
+        onComplete: () => animateParticle(particle),
+      });
+    }
+  }, []);
+
+  return (
+    <section
+      id="home"
+      className="h-screen relative flex items-center justify-center overflow-hidden"
+    >
+      {/* Particles container */}
+      <div ref={particlesRef} className="absolute inset-0 pointer-events-none">
+        {/* Generate 30 particles with different sizes */}
+        {[...Array(30)].map((_, index) => (
+          <div
+            key={index}
+            className={`absolute rounded-full bg-sky-400 ${
+              index % 3 === 0
+                ? "w-1 h-1"
+                : index % 3 === 1
+                ? "w-2 h-2"
+                : "w-3 h-3"
+            }`}
+          ></div>
+        ))}
+      </div>
+
+      <div className="container flex flex-col items-center text-center z-10">
+        <div className="max-w-3xl">
+          <div className="flex items-center justify-center gap-1.5 text-zinc-400 text-base tracking-wider mb-3">
+            Available for new opportunities
+            <span className="relative w-2 h-2 rounded-full bg-emerald-400 ml-1">
+              <span className="absolute inset-0 rounded-full bg-emerald-400 animate-ping"></span>
+            </span>
           </div>
 
-          <h2 className="headline-1 max-w-[15ch] sm:max-w-[20ch] lg:max-w-[15ch] mt-5 mb-8 lg:mb-10">
-            Building Scalable Modern Websites for the Future
+          <h2 className="headline-1 text-5xl md:text-6xl lg:text-7xl font-bold max-w-[24ch] mx-auto mt-5 mb-8 lg:mb-10 leading-tight lg:leading-tight tracking-wide">
+            Crafting Digital Experiences That Inspire & Transform
           </h2>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center justify-center gap-3 mt-8">
             <ButtonPrimary label="Download CV" icon="download" />
 
             <ButtonOutline
               href="#about"
-              label="Scroll down"
+              label="Explore my work"
               icon="arrow_downward"
             />
           </div>
-        </div>
-
-        <div className="hidden lg:block">
-          <figure className="w-full max-w-[480px] ml-auto bg-gradient-to-t from-sky-400 via-25% via-sky-400/40 to-65% rounded-[60px] overflow-hidden">
-            <img
-              src="/images/hero-banner.png"
-              width={656}
-              height={800}
-              alt="Aveek Patra"
-              className="w-full"
-            />
-          </figure>
         </div>
       </div>
     </section>

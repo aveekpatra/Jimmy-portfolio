@@ -40,9 +40,9 @@ const skillItem = [
     desc: "User Interface",
   },
   {
-    imgSrc: "/images/figma.svg",
-    label: "Figma",
-    desc: "Design tool",
+    imgSrc: "/images/trpc-placeholder.svg",
+    label: "tRPC",
+    desc: "Type-Safe API",
   },
   {
     imgSrc: "/images/vscode.svg",
@@ -55,14 +55,34 @@ const skillItem = [
     desc: "Version Control",
   },
   {
-    imgSrc: "/images/github.svg",
-    label: "GitHub",
-    desc: "Code Hosting",
+    imgSrc: "/images/nextauth-placeholder.svg",
+    label: "NextAuth.js",
+    desc: "Authentication",
   },
   {
     imgSrc: "/images/appwrite.svg",
     label: "Appwrite",
     desc: "Backend as a Service",
+  },
+  {
+    imgSrc: "/images/cursor-placeholder.svg",
+    label: "Cursor",
+    desc: "AI-powered Editor",
+  },
+  {
+    imgSrc: "/images/postgres-placeholder.svg",
+    label: "PostgreSQL",
+    desc: "SQL Database",
+  },
+  {
+    imgSrc: "/images/prisma-placeholder.svg",
+    label: "Prisma",
+    desc: "ORM & Data Layer",
+  },
+  {
+    imgSrc: "/images/react-native-placeholder.svg",
+    label: "React Native",
+    desc: "Mobile Development",
   },
 ];
 

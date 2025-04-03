@@ -15,6 +15,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Experience from "./components/Experience";
 import Skill from "./components/Skill";
 import Work from "./components/Work";
 import Review from "./components/Review";
@@ -41,9 +42,9 @@ const App = () => {
     });
   });
 
-        // <section id="reviews">
-        //   <Review />
-        // </section>
+  // <section id="reviews">
+  //   <Review />
+  // </section>
   // Render components with IDs that match navbar links
   return (
     <ReactLenis root>
@@ -55,6 +56,7 @@ const App = () => {
         <section id="about">
           <About />
         </section>
+        <Experience />
         <section id="skill">
           <Skill />
         </section>

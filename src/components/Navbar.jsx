@@ -15,6 +15,7 @@ const Navbar = ({ navOpen }) => {
   const navItems = [
     { label: "Home", link: "#home" },
     { label: "About", link: "#about" },
+    { label: "Experience", link: "#experience" },
     { label: "Skills", link: "#skill" },
     { label: "Projects", link: "#work" },
     { label: "Contact", link: "#contact" },
@@ -66,7 +67,7 @@ const Navbar = ({ navOpen }) => {
           if (rect.top >= 0 && rect.top < window.innerHeight * 0.3) {
             skipScrollUpdateRef.current = false;
           } else {
-            // Otherwise, ignore scroll updates (so intermediate sections don’t override the nav click)
+            // Otherwise, ignore scroll updates (so intermediate sections don't override the nav click)
             return;
           }
         }
