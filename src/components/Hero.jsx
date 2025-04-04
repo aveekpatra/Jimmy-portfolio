@@ -62,24 +62,29 @@ const Hero = () => {
 
       <div className="container flex flex-col items-center text-center z-10">
         <div className="max-w-3xl">
-          <div className="flex items-center justify-center gap-1.5 text-zinc-400 text-base tracking-wider mb-3">
+          <div className="flex items-center justify-center gap-1.5 text-zinc-400 text-base tracking-wider mb-3 text-shadow-sm">
             Available for new opportunities
             <span className="relative w-2 h-2 rounded-full bg-emerald-400 ml-1">
               <span className="absolute inset-0 rounded-full bg-emerald-400 animate-ping"></span>
             </span>
           </div>
 
-          <h2 className="headline-1 text-5xl md:text-6xl lg:text-7xl font-bold max-w-[24ch] mx-auto mt-5 mb-8 lg:mb-10 leading-tight lg:leading-tight tracking-wide">
+          <h2 className="headline-1 text-5xl md:text-6xl lg:text-7xl font-bold max-w-[24ch] mx-auto mt-5 mb-8 lg:mb-10 leading-tight lg:leading-tight tracking-wide text-shadow-glow">
             Crafting Digital Experiences That Inspire & Transform
           </h2>
 
           <div className="flex items-center justify-center gap-3 mt-8">
-            <ButtonPrimary label="Download CV" icon="download" />
+            <ButtonPrimary
+              label="Download CV"
+              icon="download"
+              className="text-shadow-sm"
+            />
 
             <ButtonOutline
               href="#about"
               label="Explore my work"
               icon="arrow_downward"
+              className="text-shadow-sm"
             />
           </div>
         </div>

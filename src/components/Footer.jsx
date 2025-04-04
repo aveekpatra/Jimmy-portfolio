@@ -111,7 +111,7 @@ const Footer = () => {
           </a>
 
           <p className="text-zinc-500 text-sm reveal-up">
-            &copy; 2024{" "}
+            &copy; 2025{" "}
             <span className="text-zinc-200">
               <a href="https://aveekpatra.info">aveekpatra.info</a>
             </span>
