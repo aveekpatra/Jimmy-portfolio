@@ -25,11 +25,6 @@ const skillItem = [
     desc: "JS Framework",
   },
   {
-    imgSrc: "/images/mongodb.svg",
-    label: "MongoDB",
-    desc: "Database",
-  },
-  {
     imgSrc: "/images/react.svg",
     label: "React",
     desc: "JS Library",
