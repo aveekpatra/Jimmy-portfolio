@@ -26,32 +26,13 @@ const experienceData = [
 
 const Experience = () => {
   const sectionRef = useRef(null);
-  const experienceRefs = useRef([]);
   const timelineDotsRefs = useRef([]);
   const timelineLinesRefs = useRef([]);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Main section animation
-      gsap.fromTo(
-        sectionRef.current.querySelector("h2"),
-        {
-          opacity: 0,
-          y: 50,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 80%",
-          },
-        }
-      );
-
       // Timeline animation setup
-      timelineDotsRefs.current.forEach((dot, index) => {
+      timelineDotsRefs.current.forEach((dot) => {
         // Initial state - scale dots down and make them transparent
         gsap.set(dot, {
           scale: 0.5,
@@ -62,7 +43,7 @@ const Experience = () => {
         // Create a timeline for each dot
         const dotTimeline = gsap.timeline({
           scrollTrigger: {
-            trigger: experienceRefs.current[index],
+            trigger: dot.parentElement,
             start: "top 70%",
             end: "center 30%",
             toggleActions: "play none none reverse",
@@ -89,7 +70,7 @@ const Experience = () => {
       });
 
       // Timeline lines animation
-      timelineLinesRefs.current.forEach((line, index) => {
+      timelineLinesRefs.current.forEach((line) => {
         if (!line) return; // Skip if no line (last item)
 
         // Set initial state - no height
@@ -106,53 +87,12 @@ const Experience = () => {
           duration: 1,
           ease: "power1.inOut",
           scrollTrigger: {
-            trigger: experienceRefs.current[index],
+            trigger: line.parentElement,
             start: "top 60%",
             end: "bottom 60%",
             scrub: true,
           },
         });
-      });
-
-      // Experience items animations
-      experienceRefs.current.forEach((item, index) => {
-        const timeline = gsap.timeline({
-          scrollTrigger: {
-            trigger: item,
-            start: "top 85%",
-            end: "bottom 15%",
-            toggleActions: "play none none reverse",
-          },
-        });
-
-        timeline
-          .fromTo(
-            item,
-            {
-              opacity: 0,
-              x: -50,
-            },
-            {
-              opacity: 1,
-              x: 0,
-              duration: 0.6,
-              delay: index * 0.15,
-            }
-          )
-          .fromTo(
-            item.querySelectorAll(".animate-item"),
-            {
-              opacity: 0,
-              y: 20,
-            },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.4,
-              stagger: 0.1,
-            },
-            "-=0.3"
-          );
       });
     }, sectionRef);
 
@@ -162,7 +102,7 @@ const Experience = () => {
   return (
     <section id="experience" className="section" ref={sectionRef}>
       <div className="container">
-        <h2 className="headline-1 text-center mb-12 md:mb-16">
+        <h2 className="headline-1 text-center mb-12 md:mb-16 reveal-up">
           Work Experience
         </h2>
 
@@ -170,8 +110,7 @@ const Experience = () => {
           {experienceData.map((exp, index) => (
             <div
               key={index}
-              className="bg-zinc-800/50 p-7 rounded-2xl md:p-10 relative overflow-hidden"
-              ref={(el) => (experienceRefs.current[index] = el)}
+              className="bg-zinc-800/50 p-7 rounded-2xl md:p-10 relative overflow-hidden reveal-up"
             >
               {/* Timeline dot with enhanced styling */}
               <div
@@ -190,7 +129,7 @@ const Experience = () => {
               ></div>
 
               <div className="ml-8 md:ml-10">
-                <div className="animate-item">
+                <div>
                   <h3 className="text-xl font-semibold md:text-2xl">
                     {exp.position}
                   </h3>
@@ -199,11 +138,9 @@ const Experience = () => {
                   </p>
                 </div>
 
-                <p className="text-zinc-300 mb-4 animate-item">
-                  {exp.description}
-                </p>
+                <p className="text-zinc-300 mb-4">{exp.description}</p>
 
-                <div className="flex flex-wrap gap-2 animate-item">
+                <div className="flex flex-wrap gap-2">
                   {exp.skills.map((skill, idx) => (
                     <span
                       key={idx}
