@@ -39,10 +39,19 @@ const Header = () => {
         </div>
 
         <a
-          href="#contact"
-          className="btn btn-secondary max-md:hidden md:justify-self-end"
+          href="https://www.linkedin.com/in/aveek-patra/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-secondary max-md:hidden md:justify-self-end flex items-center gap-2 px-4 py-5 text-base"
         >
-          Contact Me
+          <img
+            src="/images/linkedin.svg"
+            alt="LinkedIn"
+            width={24}
+            height={24}
+            className="w-6 h-6"
+          />
+          LinkedIn
         </a>
       </div>
     </header>

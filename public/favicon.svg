@@ -1,0 +1,21 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Minimal, modern, monochrome design for favicon -->
+  <rect width="32" height="32" fill="none"/>
+  
+  <!-- Main A shape - made bolder for favicon -->
+  <path d="M8 24L16 8L24 24H20L16 16L12 24H8Z" 
+        fill="white"/>
+  
+  <!-- P integrated inside A - simplified for favicon -->
+  <path d="M14 19V12H17C18.6569 12 20 13.3431 20 15C20 16.6569 18.6569 18 17 18H14" 
+        stroke="black" 
+        stroke-width="2.5" 
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  
+  <!-- Minimal accent line - adjusted for favicon -->
+  <path d="M6 27L26 27" 
+        stroke="white" 
+        stroke-width="1" 
+        stroke-linecap="round"/>
+</svg> 

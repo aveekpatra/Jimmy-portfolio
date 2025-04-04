@@ -4,20 +4,11 @@
 import SkillCard from "./SkillCard";
 
 const skillItem = [
+  // Frontend & UI
   {
-    imgSrc: "/images/css3.svg",
-    label: "CSS",
-    desc: "User Interface",
-  },
-  {
-    imgSrc: "/images/javascript.svg",
-    label: "JavaScript",
-    desc: "Interaction",
-  },
-  {
-    imgSrc: "/images/nodejs.svg",
-    label: "NodeJS",
-    desc: "Web Server",
+    imgSrc: "/images/react.svg",
+    label: "React",
+    desc: "JS Library",
   },
   {
     imgSrc: "/images/next-js.svg",
@@ -25,33 +16,52 @@ const skillItem = [
     desc: "JS Framework",
   },
   {
-    imgSrc: "/images/react.svg",
-    label: "React",
-    desc: "JS Library",
+    imgSrc: "/images/javascript.svg",
+    label: "JavaScript",
+    desc: "Interaction",
+  },
+  {
+    imgSrc: "/images/typescript.svg",
+    label: "TypeScript",
+    desc: "Type Safety",
+  },
+  {
+    imgSrc: "/images/css3.svg",
+    label: "CSS",
+    desc: "User Interface",
   },
   {
     imgSrc: "/images/tailwindcss.svg",
     label: "TailwindCSS",
     desc: "User Interface",
   },
+
+  // Backend & Database
   {
-    imgSrc: "/images/trpc-placeholder.svg",
+    imgSrc: "/images/nodejs.svg",
+    label: "NodeJS",
+    desc: "Web Server",
+  },
+  {
+    imgSrc: "/images/postgresql.svg",
+    label: "PostgreSQL",
+    desc: "SQL Database",
+  },
+  {
+    imgSrc: "/images/prisma.svg",
+    label: "Prisma",
+    desc: "ORM & Data Layer",
+  },
+  {
+    imgSrc: "/images/trpc.svg",
     label: "tRPC",
     desc: "Type-Safe API",
   },
+
+  // Authentication & Services
   {
-    imgSrc: "/images/vscode.svg",
-    label: "VS Code",
-    desc: "Code Editor",
-  },
-  {
-    imgSrc: "/images/git.svg",
-    label: "Git",
-    desc: "Version Control",
-  },
-  {
-    imgSrc: "/images/nextauth-placeholder.svg",
-    label: "NextAuth.js",
+    imgSrc: "/images/nextauth.svg",
+    label: "NextAuth",
     desc: "Authentication",
   },
   {
@@ -59,23 +69,27 @@ const skillItem = [
     label: "Appwrite",
     desc: "Backend as a Service",
   },
+
+  // Development Tools
   {
-    imgSrc: "/images/cursor-placeholder.svg",
+    imgSrc: "/images/vscode.svg",
+    label: "VS Code",
+    desc: "Code Editor",
+  },
+  {
+    imgSrc: "/images/cursor.svg",
     label: "Cursor",
     desc: "AI-powered Editor",
   },
   {
-    imgSrc: "/images/postgres-placeholder.svg",
-    label: "PostgreSQL",
-    desc: "SQL Database",
+    imgSrc: "/images/git.svg",
+    label: "Git",
+    desc: "Version Control",
   },
+
+  // Mobile Development
   {
-    imgSrc: "/images/prisma-placeholder.svg",
-    label: "Prisma",
-    desc: "ORM & Data Layer",
-  },
-  {
-    imgSrc: "/images/react-native-placeholder.svg",
+    imgSrc: "/images/react.svg",
     label: "React Native",
     desc: "Mobile Development",
   },

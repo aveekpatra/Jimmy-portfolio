@@ -7,28 +7,20 @@ gsap.registerPlugin(ScrollTrigger);
 
 const experienceData = [
   {
-    position: "Senior Frontend Developer",
-    company: "TechVision Inc.",
-    period: "2021 - Present",
+    position: "Web Developer",
+    company: "Traffic Balance sro.",
+    period: "2025 - Present",
     description:
-      "Led the development of responsive web applications using React and Next.js. Implemented modern UI/UX designs and optimized performance across various client projects. Mentored junior developers and established coding standards for the team.",
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+      "Developed and maintained client websites using JavaScript and modern frameworks. Collaborated with designers to implement pixel-perfect UI. Optimized site performance and improved SEO rankings for various clients.",
+    skills: ["JavaScript", "CSS", "React.js", "Figma"],
   },
   {
     position: "Web Developer",
-    company: "Digital Craft Studio",
-    period: "2019 - 2021",
-    description:
-      "Developed and maintained client websites using JavaScript and modern frameworks. Collaborated with designers to implement pixel-perfect UI. Optimized site performance and improved SEO rankings for various clients.",
-    skills: ["JavaScript", "Vue.js", "Node.js", "SCSS"],
-  },
-  {
-    position: "Frontend Intern",
-    company: "InnoWeb Solutions",
-    period: "2018 - 2019",
+    company: "CzechEase",
+    period: "2022 - 2023",
     description:
       "Assisted in the development of web applications and learned industry best practices. Contributed to UI component libraries and participated in code reviews. Gained hands-on experience with modern web technologies.",
-    skills: ["HTML", "CSS", "JavaScript", "Git"],
+    skills: ["HTML", "CSS", "JavaScript", "Git", "Figma", "React.js"],
   },
 ];
 
