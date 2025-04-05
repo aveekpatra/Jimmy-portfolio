@@ -12,7 +12,7 @@ const experienceData = [
     period: "2025 - Present",
     description:
       "Developed and maintained client websites using JavaScript and modern frameworks. Collaborated with designers to implement pixel-perfect UI. Optimized site performance and improved SEO rankings for various clients.",
-    skills: ["JavaScript", "CSS", "React.js", "Figma"],
+    skills: ["JavaScript", "CSS", "React.js", "Figma", "SEO", "Python"],
   },
   {
     position: "Web Developer",
