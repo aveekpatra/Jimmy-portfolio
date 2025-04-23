@@ -1,0 +1,31 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Component Guidelines
+
+## Button Components
+The application uses two main button types defined in [Button.jsx](mdc:src/components/Button.jsx):
+
+1. `ButtonPrimary` - Primary call-to-action button
+   - Parameters:
+     - `label` (required): Button text
+     - `href` (optional): URL to navigate to
+     - `target` (optional): Link target (default: _self)
+     - `icon` (optional): Material icon name
+     - `classes` (optional): Additional CSS classes
+
+2. `ButtonOutline` - Secondary outline style button
+   - Has the same parameters as ButtonPrimary
+
+## CV Download
+The CV download functionality is implemented in the Hero section:
+- File: [Hero.jsx](mdc:src/components/Hero.jsx)
+- CV file path: [Aveek-Patra-CV.pdf](mdc:public/Aveek-Patra-CV.pdf)
+- Implementation: Uses ButtonPrimary with href to the PDF file
+
+## Animation
+The application uses GSAP for animations:
+- Particle animations in [Hero.jsx](mdc:src/components/Hero.jsx)
+- Animation is initialized in useEffect hooks

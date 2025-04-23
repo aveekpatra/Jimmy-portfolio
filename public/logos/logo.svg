@@ -1,0 +1,11 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Minimal monochrome design -->
+  <rect width="50" height="50" fill="none"/>
+  
+  <!-- Stylized "A" -->
+  <path d="M15 35L25 15L35 35H30L25 25L20 35H15Z" fill="white"/>
+  
+  <!-- Stylized "P" -->
+  <path d="M32 15H38C39.1046 15 40 15.8954 40 17V22C40 23.1046 39.1046 24 38 24H32V15Z" fill="white"/>
+  <path d="M36 19.5C36 18.1193 34.8807 17 33.5 17H32V22H33.5C34.8807 22 36 20.8807 36 19.5Z" fill="black"/>
+</svg>

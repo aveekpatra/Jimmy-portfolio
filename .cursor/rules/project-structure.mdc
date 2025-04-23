@@ -1,0 +1,25 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Project Structure
+
+This is a React portfolio website built with Vite and styled with Tailwind CSS.
+
+## Main Files
+- [main.jsx](mdc:src/main.jsx) - Entry point for the React application
+- [App.jsx](mdc:src/App.jsx) - Main application component that handles routing
+- [index.css](mdc:src/index.css) - Global CSS styles and Tailwind imports
+
+## Component Structure
+The UI is built with modular components located in [src/components/](mdc:src/components/):
+- [Hero.jsx](mdc:src/components/Hero.jsx) - Hero section with CV download
+- [Navbar.jsx](mdc:src/components/Navbar.jsx) - Navigation component
+- [About.jsx](mdc:src/components/About.jsx) - About section
+- [Experience.jsx](mdc:src/components/Experience.jsx) - Work experience section
+- [Work.jsx](mdc:src/components/Work.jsx) - Projects showcase
+- [Contact.jsx](mdc:src/components/Contact.jsx) - Contact form
+
+## Assets
+- Public assets like downloadable files are stored in [public/](mdc:public/)

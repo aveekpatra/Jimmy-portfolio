@@ -67,11 +67,16 @@ const Hero = () => {
           </h2>
 
           <div className="flex items-center justify-center gap-3 mt-8">
-            <ButtonPrimary label="Download CV" icon="download" />
+            <ButtonPrimary
+              href="/Aveek-Patra-CV.pdf"
+              label="Download CV"
+              icon="download"
+              target="_blank"
+            />
 
             <ButtonOutline
               href="#about"
-              label="Explore my work"
+              label="Explore More"
               icon="arrow_downward"
             />
           </div>

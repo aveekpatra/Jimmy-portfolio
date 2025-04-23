@@ -1,0 +1,29 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Styling Guidelines
+
+## CSS Framework
+- The project uses [Tailwind CSS](https://tailwindcss.com/)
+- Configuration: [tailwind.config.js](mdc:tailwind.config.js)
+
+## CSS Classes
+- Primary button: `btn btn-primary`
+- Outline button: `btn btn-outline`
+- Section container: `container`
+- Headline styles:
+  - `headline-1` - Large hero text
+  - Default headings use Tailwind's text sizing (text-xl, text-2xl, etc.)
+
+## Icons
+- Using Material Symbols Rounded
+- Icon usage in components: `<span className="material-symbols-rounded">{iconName}</span>`
+
+## Responsive Design
+- Mobile-first approach
+- Breakpoints:
+  - md: 768px
+  - lg: 1024px
+- Example: `class="text-5xl md:text-6xl lg:text-7xl"`
