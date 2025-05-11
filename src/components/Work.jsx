@@ -1,51 +1,48 @@
-
-
 /**
  * Components
  */
 import ProjectCard from "./ProjectCard";
-
 
 const works = [
   {
     imgSrc: "/images/Project-portfolio.png",
     title: "Personal Portfolio",
     tags: ["GSAP", "Figma", "Frontend"],
-    projectLink: "https://pixstock-official.vercel.app/",
+    projectLink: "https://aveekpatra.info/",
     projectDescription:
-      "Ipsum ullamcorper justo consectetuer nulla no duo facer tempor feugait ut aliquyam et eu dolor.",
+      "This is my personal portfolio website. Created using React.js, Tailwind CSS. Also Used GSAP for animations and Lenis for smooth scrolling.",
   },
   {
     imgSrc: "/images/Project-zenify.png",
     title: "Zenify: productivity app",
-    tags: ["Web-design", "Development"],
-    projectLink: "https://github.com/codewithsadee/vcard-personal-portfolio",
+    tags: ["Full Stack", "Convex"],
+    projectLink: "https://github.com/aveekpatra/life_planner_app-2",
     projectDescription:
-      "Ipsum ullamcorper justo consectetuer nulla no duo facer tempor feugait ut aliquyam et eu dolor.",
+      "This is an all in one productivity app aimed to closely integrate tasks, calendar, notes and projects. Still in development.",
   },
   {
     imgSrc: "/images/Project-movies.png",
     title: "Movie App",
-    tags: ["Web-design", "Development"],
-    projectLink: "https://github.com/codewithsadee-org/wealthome",
+    tags: ["Full Stack", "API", "AppWrite"],
+    projectLink: "https://movies.aveekpatra.info/",
     projectDescription:
-      "Ipsum ullamcorper justo consectetuer nulla no duo facer tempor feugait ut aliquyam et eu dolor.",
+      "This is a movie app created using React.js, Tailwind CSS, AppWrite and TMDB API to showcase my skills in full stack development.",
   },
   {
     imgSrc: "/images/Project-lumimail.png",
     title: "Lumi: Email Client",
     tags: ["eCommerce", "Development"],
-    projectLink: "https://github.com/codewithsadee/anon-ecommerce-website",
+    projectLink: "https://lumi-mail.vercel.app/",
     projectDescription:
-      "Ipsum ullamcorper justo consectetuer nulla no duo facer tempor feugait ut aliquyam et eu dolor.",
+      "This is a Keyboard centric UI for an email client. Created using Next.js, Typescript, and Tailwind CSS.",
   },
   {
     imgSrc: "/images/Project-nike-landing.png",
     title: "Nike Landing Page Clone",
     tags: ["Development", "API"],
-    projectLink: "",
+    projectLink: "https://nike-landing-page-clone-beta.vercel.app/",
     projectDescription:
-      "Ipsum ullamcorper justo consectetuer nulla no duo facer tempor feugait ut aliquyam et eu dolor.",
+      "A simple landing page for a Nike product. Created using React.js and Tailwind CSS to showcase my skills in frontend design.",
   },
 
   {
@@ -54,10 +51,9 @@ const works = [
     tags: ["API", "MVC", "Development"],
     projectLink: "https://musify-5al0.onrender.com/",
     projectDescription:
-      "Ipsum ullamcorper justo consectetuer nulla no duo facer tempor feugait ut aliquyam et eu dolor.",
+      "A Spotify client created using React.js, Tailwind CSS, and Spotify API to showcase my skills in API integration and frontend design.",
   },
 ];
-
 
 const Work = () => {
   return (
@@ -83,6 +79,6 @@ const Work = () => {
       </div>
     </section>
   );
-}
+};
 
-export default Work
+export default Work;
