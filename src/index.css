@@ -159,7 +159,7 @@ header .btn-secondary {
 }
 
 .text-field {
-  @apply block outline-none w-full px-3 py-3 text-sm bg-zinc-800 rounded-xl ring-1 ring-inset ring-transparent transition-shadow hover:ring-zinc-50/5 focus:ring-sky-400 focus:ring-2;
+  @apply block outline-none w-full px-3 py-3 text-sm bg-zinc-800 rounded-xl ring-1 ring-inset transition-shadow hover:ring-zinc-50/5 focus:ring-sky-400 focus:ring-2  ring-zinc-50/10;
 }
 
 .text-field::placeholder {
