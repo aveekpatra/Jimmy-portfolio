@@ -1,20 +1,28 @@
 <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Minimal, modern, monochrome design -->
+  <!-- Background - transparent -->
   <rect width="50" height="50" fill="none"/>
   
-  <!-- Main A shape -->
-  <path d="M15 35L25 15L35 35H30L25 25L20 35H15Z" 
-        fill="white"/>
+  <!-- Bold A shape -->
+  <path d="M10 40L25 10L40 40H30L25 28L20 40H10Z" 
+        fill="#38bdf8" />
+        
+  <!-- Bold horizontal bar -->
+  <rect x="18" y="25" width="14" height="5" fill="#0f172a"/>
   
-  <!-- P integrated inside A -->
-  <path d="M23 25H27C28.6569 25 30 23.6569 30 22V20C30 18.3431 28.6569 17 27 17H23" 
-        stroke="black" 
-        stroke-width="2" 
+  <!-- P element simplified -->
+  <path d="M35 20V40" 
+        stroke="#0f172a" 
+        stroke-width="8" 
         stroke-linecap="round"/>
   
-  <!-- Minimal accent line -->
-  <path d="M10 40L40 40" 
-        stroke="white" 
-        stroke-width="1" 
+  <path d="M35 24H25" 
+        stroke="#0f172a" 
+        stroke-width="8" 
         stroke-linecap="round"/>
+        
+  <!-- Outline to tie it together -->
+  <path d="M10 40L25 10L40 40H30L25 28L20 40H10Z" 
+        stroke="#38bdf8" 
+        stroke-width="1"
+        fill="none"/>
 </svg> 
