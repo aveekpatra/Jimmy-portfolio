@@ -18,20 +18,22 @@ const ProjectCard = ({
         classes
       }
     >
-      <figure className="img-box aspect-square rounded-lg mb-4">
+      <figure className="img-box aspect-square rounded-lg mb-4 border border-zinc-50/10 shadow-md">
         <img src={imgSrc} alt={title} loading="lazy" className="img-cover" />
       </figure>
 
       <div className="flex items-center justify-between gap-4">
         <div>
           <h3 className="title-1 mb-3">{title}</h3>
-          <h3 className="text-sm color-slate-600 mb-5 font-sans">{projectDescription}</h3>
+          <h3 className="text-sm color-slate-600 mb-5 font-sans">
+            {projectDescription}
+          </h3>
 
           <div className="flex flex-wrap items-center gap-2">
             {tags.map((label, key) => (
               <span
                 key={key}
-                className="h-8 text-sm text-zinc-400 bg-zinc-50/5 grid items-center px-3 rounded-lg"
+                className="h-8 text-sm text-zinc-400 bg-zinc-50/5 grid items-center px-3 rounded-lg ring-1 ring-inset ring-zinc-50/10 "
               >
                 {label}
               </span>

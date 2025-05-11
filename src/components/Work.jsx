@@ -29,26 +29,25 @@ const works = [
       "This is a movie app created using React.js, Tailwind CSS, AppWrite and TMDB API to showcase my skills in full stack development.",
   },
   {
+    imgSrc: "/images/Project-nike-landing.png",
+    title: "Nike Landing Page Clone",
+    tags: ["UI/UX", "Frontend"],
+    projectLink: "https://nike-landing-page-clone-beta.vercel.app/",
+    projectDescription:
+      "A simple landing page for a Nike product. Created using React.js and Tailwind CSS to showcase my skills in frontend design.",
+  },
+  {
     imgSrc: "/images/Project-lumimail.png",
     title: "Lumi: Email Client",
-    tags: ["eCommerce", "Development"],
+    tags: ["UI/UX", "Frontend"],
     projectLink: "https://lumi-mail.vercel.app/",
     projectDescription:
       "This is a Keyboard centric UI for an email client. Created using Next.js, Typescript, and Tailwind CSS.",
   },
   {
-    imgSrc: "/images/Project-nike-landing.png",
-    title: "Nike Landing Page Clone",
-    tags: ["Development", "API"],
-    projectLink: "https://nike-landing-page-clone-beta.vercel.app/",
-    projectDescription:
-      "A simple landing page for a Nike product. Created using React.js and Tailwind CSS to showcase my skills in frontend design.",
-  },
-
-  {
     imgSrc: "/images/project-1.jpg",
     title: "Musify: Spotify Client",
-    tags: ["API", "MVC", "Development"],
+    tags: ["API", "MVC", "Full Stack"],
     projectLink: "https://musify-5al0.onrender.com/",
     projectDescription:
       "A Spotify client created using React.js, Tailwind CSS, and Spotify API to showcase my skills in API integration and frontend design.",

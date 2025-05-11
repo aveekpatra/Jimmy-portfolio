@@ -102,7 +102,7 @@ const Experience = () => {
   return (
     <section id="experience" className="section" ref={sectionRef}>
       <div className="container">
-        <h2 className="headline-1 text-center mb-12 md:mb-16 reveal-up">
+        <h2 className="headline-2 text-center mb-12 md:mb-16 reveal-up">
           Work Experience
         </h2>
 
@@ -110,7 +110,7 @@ const Experience = () => {
           {experienceData.map((exp, index) => (
             <div
               key={index}
-              className="bg-zinc-800/50 p-7 rounded-2xl md:p-10 relative overflow-hidden reveal-up"
+              className="bg-zinc-800/50 p-7 rounded-2xl md:p-10 relative overflow-hidden reveal-up ring-1 ring-inset ring-zinc-50/10"
             >
               {/* Timeline dot with enhanced styling */}
               <div
@@ -144,7 +144,7 @@ const Experience = () => {
                   {exp.skills.map((skill, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 text-sm bg-zinc-700/50 rounded-full text-zinc-300"
+                      className="px-3 py-1 text-sm bg-zinc-700/50 rounded-full text-zinc-300 ring-1 ring-inset ring-zinc-50/10"
                     >
                       {skill}
                     </span>

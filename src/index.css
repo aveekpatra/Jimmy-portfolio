@@ -52,11 +52,11 @@ body {
 }
 
 .img-box {
-  @apply bg-zinc-700 overflow-hidden;
+  @apply bg-zinc-700 overflow-hidden ring-2 ring-inset ring-zinc-50/10;
 }
 
 .img-cover {
-  @apply w-full h-full object-cover;
+  @apply w-full h-full object-cover ring-1 ring-inset ring-zinc-50/10;
 }
 
 .section {
