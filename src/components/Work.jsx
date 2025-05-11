@@ -8,50 +8,51 @@ import ProjectCard from "./ProjectCard";
 
 const works = [
   {
-    imgSrc: "/images/project-1.jpg",
-    title: "Full stack music app",
-    tags: ["API", "MVC", "Development"],
-    projectLink: "https://musify-5al0.onrender.com/",
-    projectDescription:
-      "Ipsum ullamcorper justo consectetuer nulla no duo facer tempor feugait ut aliquyam et eu dolor.",
-  },
-  {
-    imgSrc: "/images/project-2.jpg",
-    title: "Free stock photo app",
-    tags: ["API", "SPA"],
+    imgSrc: "/images/Project-portfolio.png",
+    title: "Personal Portfolio",
+    tags: ["GSAP", "Figma", "Frontend"],
     projectLink: "https://pixstock-official.vercel.app/",
     projectDescription:
       "Ipsum ullamcorper justo consectetuer nulla no duo facer tempor feugait ut aliquyam et eu dolor.",
   },
   {
-    imgSrc: "/images/project-3.jpg",
-    title: "Recipe app",
-    tags: ["Development", "API"],
-    projectLink: "",
+    imgSrc: "/images/Project-zenify.png",
+    title: "Zenify: productivity app",
+    tags: ["Web-design", "Development"],
+    projectLink: "https://github.com/codewithsadee/vcard-personal-portfolio",
     projectDescription:
       "Ipsum ullamcorper justo consectetuer nulla no duo facer tempor feugait ut aliquyam et eu dolor.",
   },
   {
-    imgSrc: "/images/project-4.jpg",
-    title: "Real state website",
+    imgSrc: "/images/Project-movies.png",
+    title: "Movie App",
     tags: ["Web-design", "Development"],
     projectLink: "https://github.com/codewithsadee-org/wealthome",
     projectDescription:
       "Ipsum ullamcorper justo consectetuer nulla no duo facer tempor feugait ut aliquyam et eu dolor.",
   },
   {
-    imgSrc: "/images/project-5.jpg",
-    title: "eCommerce website",
+    imgSrc: "/images/Project-lumimail.png",
+    title: "Lumi: Email Client",
     tags: ["eCommerce", "Development"],
     projectLink: "https://github.com/codewithsadee/anon-ecommerce-website",
     projectDescription:
       "Ipsum ullamcorper justo consectetuer nulla no duo facer tempor feugait ut aliquyam et eu dolor.",
   },
   {
-    imgSrc: "/images/project-6.jpg",
-    title: "vCard Personal portfolio",
-    tags: ["Web-design", "Development"],
-    projectLink: "https://github.com/codewithsadee/vcard-personal-portfolio",
+    imgSrc: "/images/Project-nike-landing.png",
+    title: "Nike Landing Page Clone",
+    tags: ["Development", "API"],
+    projectLink: "",
+    projectDescription:
+      "Ipsum ullamcorper justo consectetuer nulla no duo facer tempor feugait ut aliquyam et eu dolor.",
+  },
+
+  {
+    imgSrc: "/images/project-1.jpg",
+    title: "Musify: Spotify Client",
+    tags: ["API", "MVC", "Development"],
+    projectLink: "https://musify-5al0.onrender.com/",
     projectDescription:
       "Ipsum ullamcorper justo consectetuer nulla no duo facer tempor feugait ut aliquyam et eu dolor.",
   },
