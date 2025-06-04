@@ -68,7 +68,7 @@ const Hero = () => {
 
           <div className="flex items-center justify-center gap-3 mt-8">
             <ButtonPrimary
-              href="/Aveek_Patra_CV.pdf"
+              href="https://vt5eyv1e1r.ufs.sh/f/Ozz7E6ivPF5CaylnpCRFMemZGtjiQYzW3K96VFbk7ToD51Ec"
               label="Download CV"
               icon="download"
               target="_blank"
