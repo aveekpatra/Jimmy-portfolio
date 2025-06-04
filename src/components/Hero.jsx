@@ -41,7 +41,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="h-screen relative flex items-center justify-center overflow-hidden"
+      className="h-[90vh] md:h-screen relative flex items-center justify-center overflow-hidden"
     >
       {/* Particles container */}
       <div ref={particlesRef} className="absolute inset-0 pointer-events-none">
