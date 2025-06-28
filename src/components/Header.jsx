@@ -2,6 +2,7 @@
  * Node modules
  */
 import { useState } from "react";
+import { Menu, X, Linkedin } from "lucide-react";
 
 /**
  * Components
@@ -30,9 +31,7 @@ const Header = () => {
             className="menu-btn md:hidden"
             onClick={() => setNavOpen((prev) => !prev)}
           >
-            <span className="material-symbols-rounded">
-              {navOpen ? "close" : "menu"}
-            </span>
+            {navOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
           <Navbar navOpen={navOpen} />
@@ -44,13 +43,7 @@ const Header = () => {
           rel="noopener noreferrer"
           className="btn btn-secondary max-md:hidden md:justify-self-end flex items-center gap-2 px-4 py-5 text-base"
         >
-          <img
-            src="/images/linkedin.svg"
-            alt="LinkedIn"
-            width={24}
-            height={24}
-            className="w-6 h-6"
-          />
+          <Linkedin size={20} />
           LinkedIn
         </a>
       </div>

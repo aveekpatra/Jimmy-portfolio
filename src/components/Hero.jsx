@@ -4,6 +4,7 @@
 
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
+import { Download, ArrowUpRight } from "lucide-react";
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -219,16 +220,11 @@ const Hero = () => {
               <button className="relative px-8 py-3.5 rounded-full font-semibold text-[16px] bg-zinc-800/50 text-zinc-300 hover:text-white transition-all duration-300 flex items-center justify-center min-w-[180px]">
                 <span className="inline-flex items-center uppercase">
                   See my work
-                  <span
-                    className="material-symbols-rounded text-xl ml-2 relative -top-[0.5px]"
-                    style={{ transform: "rotate(-45deg)" }}
-                  >
-                    arrow_forward
-                  </span>
+                  <ArrowUpRight size={20} className="ml-2" />
                 </span>
               </button>
             </div>
-            
+
             {/* Primary Button */}
             <div className="relative w-fit">
               <div
@@ -245,9 +241,7 @@ const Hero = () => {
               <button className="relative px-8 py-3.5 rounded-full font-semibold text-[16px] bg-white text-zinc-900 hover:bg-zinc-100 transition-all duration-300 flex items-center justify-center min-w-[180px]">
                 <span className="inline-flex items-center uppercase">
                   Download CV
-                  <span className="material-symbols-rounded text-xl ml-2 relative -top-[0.5px]">
-                    arrow_downward
-                  </span>
+                  <Download size={20} className="ml-2" />
                 </span>
               </button>
             </div>

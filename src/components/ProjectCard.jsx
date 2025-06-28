@@ -2,6 +2,7 @@
  * Node modules
  */
 import PropTypes from "prop-types";
+import { ArrowUpRight } from "lucide-react";
 
 const ProjectCard = ({
   imgSrc,
@@ -42,9 +43,7 @@ const ProjectCard = ({
         </div>
 
         <div className="w-11 h-11 rounded-lg grid place-items-center bg-sky-400 text-zinc-950 shrink-0 absolute bottom-4 right-4">
-          <span className="material-symbols-rounded" aria-hidden="true">
-            arrow_outward
-          </span>
+          <ArrowUpRight size={20} aria-hidden="true" />
         </div>
       </div>
 
