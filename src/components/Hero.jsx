@@ -76,7 +76,7 @@ const Hero = () => {
     <section
       id="home"
       ref={heroRef}
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 sm:pt-24"
       style={{
         background: `
           linear-gradient(to bottom, 
@@ -92,7 +92,7 @@ const Hero = () => {
         ref={cloudRef}
         className="absolute pointer-events-none"
         style={{
-          top: "10%",
+          top: "15%",
           left: "15%",
           right: "15%",
           bottom: "35%",
@@ -135,7 +135,7 @@ const Hero = () => {
       <div
         className="absolute pointer-events-none opacity-15"
         style={{
-          top: "15%",
+          top: "20%",
           left: "20%",
           right: "20%",
           bottom: "40%",
@@ -174,10 +174,10 @@ const Hero = () => {
         }}
       ></div>
 
-      <div className="container mx-auto px-6 text-center relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
         {/* Profile Image */}
-        <div className="relative inline-block mb-8">
-          <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-2 border-zinc-50/10 shadow-2xl bg-zinc-800">
+        <div className="relative inline-block mb-6 sm:mb-8">
+          <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 mx-auto rounded-full overflow-hidden border-2 border-zinc-50/10 shadow-2xl bg-zinc-800">
             <img
               src="/images/hero-banner-2.png"
               alt="Profile"
@@ -188,7 +188,7 @@ const Hero = () => {
 
         {/* Main Content */}
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
             Full Stack Developer
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
@@ -196,16 +196,16 @@ const Hero = () => {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-zinc-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-zinc-300 mb-8 sm:mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
             Transforming ideas into powerful digital experiences through
-            <br />
+            <br className="hidden sm:block" />
             innovative full-stack development and thoughtful design.
           </p>
 
           {/* Action Buttons with Animated Borders */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-xl mx-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 max-w-xl mx-auto px-4 sm:px-0">
             {/* Secondary Button */}
-            <div className="relative w-fit">
+            <div className="relative w-full sm:w-fit">
               <div
                 className="absolute inset-0 rounded-full p-[1px]"
                 style={{
@@ -217,16 +217,16 @@ const Hero = () => {
               >
                 <div className="w-full h-full rounded-full bg-zinc-900"></div>
               </div>
-              <button className="relative px-8 py-3.5 rounded-full font-semibold text-[16px] bg-zinc-800/50 text-zinc-300 hover:text-white transition-all duration-300 flex items-center justify-center min-w-[180px]">
+              <button className="relative px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base bg-zinc-800/50 text-zinc-300 hover:text-white transition-all duration-300 flex items-center justify-center w-full sm:min-w-[180px]">
                 <span className="inline-flex items-center uppercase">
                   See my work
-                  <ArrowUpRight size={20} className="ml-2" />
+                  <ArrowUpRight size={18} className="sm:w-5 sm:h-5 ml-2" />
                 </span>
               </button>
             </div>
 
             {/* Primary Button */}
-            <div className="relative w-fit">
+            <div className="relative w-full sm:w-fit">
               <div
                 className="absolute inset-0 rounded-full p-[1px]"
                 style={{
@@ -238,10 +238,10 @@ const Hero = () => {
               >
                 <div className="w-full h-full rounded-full bg-zinc-900"></div>
               </div>
-              <button className="relative px-8 py-3.5 rounded-full font-semibold text-[16px] bg-white text-zinc-900 hover:bg-zinc-100 transition-all duration-300 flex items-center justify-center min-w-[180px]">
+              <button className="relative px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base bg-white text-zinc-900 hover:bg-zinc-100 transition-all duration-300 flex items-center justify-center w-full sm:min-w-[180px]">
                 <span className="inline-flex items-center uppercase">
                   Download CV
-                  <Download size={20} className="ml-2" />
+                  <Download size={18} className="sm:w-5 sm:h-5 ml-2" />
                 </span>
               </button>
             </div>
