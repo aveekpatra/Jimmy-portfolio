@@ -15,39 +15,54 @@ const ProjectCard = ({
   return (
     <div
       className={
-        "relative p-4 rounded-2xl bg-zinc-800 hover:bg-zinc-700/50 active:bg-zinc-700/60 ring-1 ring-inset ring-zinc-50/5 transition-colors " +
+        "group relative p-4 rounded-2xl bg-zinc-800/50 backdrop-blur-sm hover:bg-zinc-700/60 ring-1 ring-inset ring-zinc-50/5 hover:ring-zinc-50/10 transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1 " +
         classes
       }
     >
-      <figure className="img-box aspect-square rounded-lg mb-4 border border-zinc-50/10 shadow-md">
-        <img src={imgSrc} alt={title} loading="lazy" className="img-cover" />
+      <figure className="img-box aspect-square rounded-xl mb-4 border border-zinc-50/10 overflow-hidden">
+        <img
+          src={imgSrc}
+          alt={title}
+          loading="lazy"
+          className="img-cover transition-transform duration-500 ease-out group-hover:scale-105"
+        />
+        {/* Simplified image overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </figure>
 
-      <div className="flex items-center justify-between gap-4">
+      <div className="space-y-3">
         <div>
-          <h3 className="title-1 mb-3">{title}</h3>
-          <h3 className="text-sm color-slate-600 mb-5 font-sans">
-            {projectDescription}
+          <h3 className="title-1 mb-2 text-white group-hover:text-blue-100 transition-colors duration-300">
+            {title}
           </h3>
-
-          <div className="flex flex-wrap items-center gap-2">
-            {tags.map((label, key) => (
-              <span
-                key={key}
-                className="h-8 text-sm text-zinc-400 bg-zinc-50/5 grid items-center px-3 rounded-lg ring-1 ring-inset ring-zinc-50/10 "
-              >
-                {label}
-              </span>
-            ))}
-          </div>
+          <p className="text-sm text-zinc-400 mb-4 leading-relaxed line-clamp-3 group-hover:text-zinc-300 transition-colors duration-300">
+            {projectDescription}
+          </p>
         </div>
 
-        <div className="w-11 h-11 rounded-lg grid place-items-center bg-sky-400 text-zinc-950 shrink-0 absolute bottom-4 right-4">
-          <ArrowUpRight size={20} aria-hidden="true" />
+        <div className="flex flex-wrap items-center gap-2">
+          {tags.map((label, key) => (
+            <span
+              key={key}
+              className="inline-flex items-center h-6 px-2.5 text-xs font-medium text-zinc-300 bg-zinc-50/5 rounded-full ring-1 ring-inset ring-zinc-50/10 hover:bg-zinc-50/10 hover:text-white transition-all duration-300"
+            >
+              {label}
+            </span>
+          ))}
         </div>
       </div>
 
-      <a href={projectLink} target="_blank" className="absolute inset-0"></a>
+      {/* Simplified action button */}
+      <div className="absolute top-3 right-3 w-9 h-9 rounded-full bg-zinc-900/80 backdrop-blur-sm border border-zinc-50/10 grid place-items-center text-zinc-400 opacity-0 group-hover:opacity-100 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300 ease-out">
+        <ArrowUpRight size={14} />
+      </div>
+
+      <a
+        href={projectLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute inset-0 z-10"
+      ></a>
     </div>
   );
 };

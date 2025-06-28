@@ -151,7 +151,7 @@ const Footer = () => {
           </div>
 
           {/* Divider */}
-          <div className="h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent reveal-up"></div>
+          <div className="h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent mt-10 reveal-up"></div>
 
           {/* Bottom section */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6 my-10">

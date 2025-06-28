@@ -177,7 +177,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 text-center relative z-10">
         {/* Profile Image */}
         <div className="relative inline-block mb-8">
-          <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-zinc-50/10 shadow-2xl bg-zinc-800">
+          <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-2 border-zinc-50/10 shadow-2xl bg-zinc-800">
             <img
               src="/images/hero-banner-2.png"
               alt="Profile"

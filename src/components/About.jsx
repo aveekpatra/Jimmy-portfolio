@@ -1,3 +1,5 @@
+import { Code, Users, Award, Coffee, Github, Linkedin } from "lucide-react";
+
 const aboutItems = [
   {
     label: "Projects completed",
@@ -9,6 +11,19 @@ const aboutItems = [
   },
 ];
 
+const skills = [
+  "React.js",
+  "Next.js",
+  "TypeScript",
+  "Node.js",
+  "Python",
+  "PostgreSQL",
+  "MongoDB",
+  "Tailwind CSS",
+  "GSAP",
+  "Figma",
+];
+
 const About = () => {
   return (
     <section id="about" className="section">
@@ -18,45 +33,66 @@ const About = () => {
             About Me
           </h2>
           <p className="text-zinc-300 mb-4 md:mb-8 md:text-xl md:max-w-full font-light">
-            Hello, I&apos;m Aveek, a full-stack developer dedicated to crafting
-            high-quality, user-centric digital experiences. My approach to
-            development is rooted in a genuine passion for building solutions
-            that are not only technically sound but also intuitive and engaging
-            for the end-user.
+            Hello, I&apos;m Aveek, a passionate full-stack developer who
+            transforms ideas into exceptional digital experiences. With a keen
+            eye for design and a deep understanding of modern web technologies,
+            I create solutions that are not only visually stunning but also
+            highly functional and user-friendly.
             <br />
-            <br />I believe in the power of clean, well-structured code and
-            thoughtful design to create seamless interactions and robust
-            applications. Whether I&apos;m working on the front-end to bring a
-            design to life or architecting the back-end logic, my focus is
-            always on delivering performance, scalability, and a positive user
-            journey. I enjoy the challenge of transforming complex problems into
-            elegant, effective solutions and continuously seek to refine my
-            skills to stay at the forefront of modern web development
+            <br />
+            My journey in web development has been driven by curiosity and a
+            commitment to excellence. I specialize in building scalable
+            applications using cutting-edge technologies like React, Next.js,
+            and TypeScript. Whether it&apos;s crafting pixel-perfect interfaces
+            or architecting robust backend systems, I approach every project
+            with meticulous attention to detail and a focus on delivering
+            results that exceed expectations.
           </p>
 
-          <div className="flex flex-wrap items-center gap-4 md:gap-7">
-            {aboutItems.map(({ label, number }, key) => (
-              <div key={key}>
-                <div className="flex items-center md:mb-2">
-                  <span className="text-2xl font-semibold md:text-4xl">
-                    {number}
-                  </span>
-                  <span className="text-sky-400 font-semibold md:text-3xl ml-2">
-                    +
-                  </span>
+          <div className="flex flex-wrap items-center justify-between gap-4 md:gap-7">
+            <div className="flex flex-wrap items-center gap-4 md:gap-7">
+              {aboutItems.map(({ label, number }, key) => (
+                <div key={key}>
+                  <div className="flex items-center md:mb-2">
+                    <span className="text-2xl font-semibold md:text-4xl">
+                      {number}
+                    </span>
+                    <span className="text-sky-400 font-semibold md:text-3xl ml-2">
+                      +
+                    </span>
+                  </div>
+                  <p className="text-sm text-zinc-400">{label}</p>
                 </div>
+              ))}
+            </div>
 
-                <p className="text-sm text-zinc-400">{label}</p>
-              </div>
-            ))}
-
-            {/* <img
-              src="/images/logo.svg"
-              alt="Logo"
-              width={40}
-              height={40}
-              className="ml-auto md:w-[50px] md:h-[50px]"
-            /> */}
+            {/* Social Links */}
+            <div className="flex items-center gap-3">
+              <a
+                href="https://github.com/aveekpatra"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-12 h-12 rounded-full bg-zinc-700/50 hover:bg-zinc-600 transition-all duration-300 hover:scale-110 group ring-1 ring-inset ring-zinc-50/10"
+                aria-label="GitHub Profile"
+              >
+                <Github
+                  size={20}
+                  className="text-zinc-300 group-hover:text-white"
+                />
+              </a>
+              <a
+                href="https://linkedin.com/in/aveekpatra"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-12 h-12 rounded-full bg-zinc-700/50 hover:bg-blue-600 transition-all duration-300 hover:scale-110 group ring-1 ring-inset ring-zinc-50/10"
+                aria-label="LinkedIn Profile"
+              >
+                <Linkedin
+                  size={20}
+                  className="text-zinc-300 group-hover:text-white"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>

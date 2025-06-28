@@ -2,7 +2,7 @@
  * Node modules
  */
 import { useState } from "react";
-import { Menu, X, Linkedin } from "lucide-react";
+import { Menu, X, Github } from "lucide-react";
 
 /**
  * Components
@@ -38,13 +38,13 @@ const Header = () => {
         </div>
 
         <a
-          href="https://www.linkedin.com/in/aveek-patra/"
+          href="https://github.com/aveekpatra"
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-secondary max-md:hidden md:justify-self-end flex items-center gap-2 px-4 py-5 text-base"
         >
-          <Linkedin size={20} />
-          LinkedIn
+          <Github size={20} />
+          GitHub
         </a>
       </div>
     </header>
