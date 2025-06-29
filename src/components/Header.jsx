@@ -47,7 +47,7 @@ const Header = () => {
           href="https://github.com/aveekpatra"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-secondary max-md:hidden md:justify-self-end flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base rounded-lg hover:bg-zinc-700 transition-colors"
+          className="btn btn-secondary max-md:hidden md:justify-self-end flex items-center gap-3 px-3 py-6 sm:px-4 sm:py-5.25 text-sm sm:text-base rounded-lg hover:bg-zinc-700 transition-colors shadow-inner"
         >
           <Github size={16} className="sm:w-5 sm:h-5" />
           <span className="hidden lg:inline">GitHub</span>

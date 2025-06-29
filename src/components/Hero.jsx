@@ -9,9 +9,83 @@ import { Download, ArrowUpRight } from "lucide-react";
 const Hero = () => {
   const heroRef = useRef(null);
   const cloudRef = useRef(null);
+  const profileRef = useRef(null);
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const descriptionRef = useRef(null);
+  const buttonsRef = useRef(null);
 
   useEffect(() => {
     const cloud = cloudRef.current;
+    const profile = profileRef.current;
+    const title = titleRef.current;
+    const subtitle = subtitleRef.current;
+    const description = descriptionRef.current;
+    const buttons = buttonsRef.current;
+
+    // Hero content animation timeline
+    const heroTL = gsap.timeline({ delay: 0.3 });
+
+    // Set initial states
+    gsap.set([profile, title, subtitle, description, buttons], {
+      opacity: 0,
+      y: 30,
+      scale: 0.95,
+    });
+
+    // Animate elements in sequence
+    heroTL
+      .to(profile, {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.8,
+        ease: "power2.out",
+      })
+      .to(
+        title,
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.9,
+          ease: "power2.out",
+        },
+        "-=0.4"
+      )
+      .to(
+        subtitle,
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: "power2.out",
+        },
+        "-=0.5"
+      )
+      .to(
+        description,
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: "power2.out",
+        },
+        "-=0.4"
+      )
+      .to(
+        buttons,
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.9,
+          ease: "power2.out",
+        },
+        "-=0.3"
+      );
 
     // Create a master timeline for coordinated animations
     const masterTL = gsap.timeline({ repeat: -1 });
@@ -69,6 +143,7 @@ const Hero = () => {
 
     return () => {
       masterTL.kill();
+      heroTL.kill();
     };
   }, []);
 
@@ -176,10 +251,10 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
         {/* Profile Image */}
-        <div className="relative inline-block mb-6 sm:mb-8">
+        <div ref={profileRef} className="relative inline-block mb-6 sm:mb-8">
           <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 mx-auto rounded-full overflow-hidden border-2 border-zinc-50/10 shadow-2xl bg-zinc-800">
             <img
-              src="/images/hero-banner-2.png"
+              src="/images/logo-sm.jpg"
               alt="Profile"
               className="w-full h-full object-cover"
             />
@@ -188,22 +263,34 @@ const Hero = () => {
 
         {/* Main Content */}
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+          <h1
+            ref={titleRef}
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight"
+          >
             Full Stack Developer
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+            <span
+              ref={subtitleRef}
+              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400"
+            >
               & Creative Design
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-zinc-300 mb-8 sm:mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
+          <p
+            ref={descriptionRef}
+            className="text-base sm:text-lg md:text-xl text-zinc-300 mb-8 sm:mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0"
+          >
             Transforming ideas into powerful digital experiences through
             <br className="hidden sm:block" />
             innovative full-stack development and thoughtful design.
           </p>
 
           {/* Action Buttons with Animated Borders */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 max-w-xl mx-auto px-4 sm:px-0">
+          <div
+            ref={buttonsRef}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 max-w-xl mx-auto px-4 sm:px-0"
+          >
             {/* Secondary Button */}
             <div className="relative w-full sm:w-fit">
               <div
@@ -217,12 +304,15 @@ const Hero = () => {
               >
                 <div className="w-full h-full rounded-full bg-zinc-900"></div>
               </div>
-              <button className="relative px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base bg-zinc-800/50 text-zinc-300 hover:text-white transition-all duration-300 flex items-center justify-center w-full sm:min-w-[180px]">
+              <a
+                href="#work"
+                className="relative px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base bg-zinc-800/50 text-zinc-300 hover:text-white transition-all duration-300 flex items-center justify-center w-full sm:min-w-[180px]"
+              >
                 <span className="inline-flex items-center uppercase">
                   See my work
                   <ArrowUpRight size={18} className="sm:w-5 sm:h-5 ml-2" />
                 </span>
-              </button>
+              </a>
             </div>
 
             {/* Primary Button */}
@@ -238,12 +328,17 @@ const Hero = () => {
               >
                 <div className="w-full h-full rounded-full bg-zinc-900"></div>
               </div>
-              <button className="relative px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base bg-white text-zinc-900 hover:bg-zinc-100 transition-all duration-300 flex items-center justify-center w-full sm:min-w-[180px]">
+              <a
+                href="https://vt5eyv1e1r.ufs.sh/f/Ozz7E6ivPF5CM5gDdPij189Sb6lNsuDW7FR5Lzkwhx0vemYU"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base bg-white text-zinc-900 hover:bg-zinc-100 transition-all duration-300 flex items-center justify-center w-full sm:min-w-[180px]"
+              >
                 <span className="inline-flex items-center uppercase">
                   Download CV
                   <Download size={18} className="sm:w-5 sm:h-5 ml-2" />
                 </span>
-              </button>
+              </a>
             </div>
           </div>
         </div>
