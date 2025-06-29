@@ -38,14 +38,17 @@ const Contact = () => {
           </p>
 
           <div className="flex items-center gap-2 mt-auto">
-            {socialLinks.map(({ href, icon }, key) => (
+            {socialLinks.map(({ href, icon, alt }, key) => (
               <a
                 key={key}
                 href={href}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="w-12 h-12 grid place-items-center ring-inset ring-1 ring-zinc-50/5 rounded-lg transition-[background-color,color] hover:bg-zinc-50 hover:text-zinc-950 active:bg-zinc-50/80 reveal-up"
+                aria-label={`Visit my ${alt} profile`}
               >
                 {icon}
+                <span className="sr-only">{alt}</span>
               </a>
             ))}
           </div>

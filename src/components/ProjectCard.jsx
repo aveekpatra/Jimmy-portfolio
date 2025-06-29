@@ -62,7 +62,10 @@ const ProjectCard = ({
         target="_blank"
         rel="noopener noreferrer"
         className="absolute inset-0 z-10"
-      ></a>
+        aria-label={`View ${title} project details`}
+      >
+        <span className="sr-only">View {title} project</span>
+      </a>
     </div>
   );
 };
