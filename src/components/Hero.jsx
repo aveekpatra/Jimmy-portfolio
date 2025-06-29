@@ -93,30 +93,30 @@ const Hero = () => {
     // Smooth morphing animation with organic movement
     masterTL
       .to(cloud, {
-        backgroundPosition: "20% 25%, 75% 65%, 45% 75%, 65% 35%",
-        duration: 12,
+        backgroundPosition: "35% 45%, 70% 60%, 50% 70%, 60% 40%",
+        duration: 15,
         ease: "power1.inOut",
       })
       .to(cloud, {
-        backgroundPosition: "60% 30%, 25% 70%, 80% 45%, 35% 60%",
-        duration: 12,
+        backgroundPosition: "55% 35%, 30% 65%, 75% 50%, 40% 55%",
+        duration: 15,
         ease: "power1.inOut",
       })
       .to(cloud, {
-        backgroundPosition: "40% 55%, 70% 25%, 25% 40%, 75% 75%",
-        duration: 12,
+        backgroundPosition: "45% 50%, 65% 30%, 30% 45%, 70% 70%",
+        duration: 15,
         ease: "power1.inOut",
       })
       .to(cloud, {
         backgroundPosition: "30% 40%, 70% 60%, 50% 30%, 20% 70%",
-        duration: 12,
+        duration: 15,
         ease: "power1.inOut",
       });
 
     // Subtle breathing animation
     gsap.to(cloud, {
-      scale: 1.08,
-      duration: 25,
+      scale: 1.05,
+      duration: 28,
       repeat: -1,
       yoyo: true,
       ease: "sine.inOut",
@@ -124,9 +124,9 @@ const Hero = () => {
 
     // Gentle floating movement
     gsap.to(cloud, {
-      x: 12,
-      y: 6,
-      duration: 20,
+      x: 8,
+      y: 4,
+      duration: 22,
       repeat: -1,
       yoyo: true,
       ease: "sine.inOut",
@@ -134,8 +134,8 @@ const Hero = () => {
 
     // Subtle rotation for organic feel
     gsap.to(cloud, {
-      rotation: 2,
-      duration: 30,
+      rotation: 1.5,
+      duration: 35,
       repeat: -1,
       yoyo: true,
       ease: "sine.inOut",
@@ -172,15 +172,15 @@ const Hero = () => {
           right: "15%",
           bottom: "35%",
           background: `
-            radial-gradient(ellipse 400px 280px at 30% 40%, rgba(59, 130, 246, 0.25) 0%, rgba(59, 130, 246, 0.08) 40%, transparent 70%),
-            radial-gradient(ellipse 350px 250px at 70% 60%, rgba(147, 51, 234, 0.2) 0%, rgba(147, 51, 234, 0.06) 40%, transparent 70%),
-            radial-gradient(ellipse 320px 220px at 50% 30%, rgba(16, 185, 129, 0.18) 0%, rgba(16, 185, 129, 0.04) 40%, transparent 70%),
-            radial-gradient(ellipse 280px 200px at 20% 70%, rgba(245, 101, 101, 0.15) 0%, rgba(245, 101, 101, 0.03) 40%, transparent 70%)
+            radial-gradient(ellipse 400px 280px at 30% 40%, rgba(59, 130, 246, 0.4) 0%, rgba(59, 130, 246, 0.15) 40%, transparent 70%),
+            radial-gradient(ellipse 350px 250px at 70% 60%, rgba(147, 51, 234, 0.35) 0%, rgba(147, 51, 234, 0.12) 40%, transparent 70%),
+            radial-gradient(ellipse 320px 220px at 50% 30%, rgba(16, 185, 129, 0.3) 0%, rgba(16, 185, 129, 0.08) 40%, transparent 70%),
+            radial-gradient(ellipse 280px 200px at 20% 70%, rgba(245, 101, 101, 0.25) 0%, rgba(245, 101, 101, 0.06) 40%, transparent 70%)
           `,
           backgroundSize: "100% 100%, 100% 100%, 100% 100%, 100% 100%",
           backgroundPosition: "30% 40%, 70% 60%, 50% 30%, 20% 70%",
           filter: "blur(20px) contrast(1.02) brightness(1.01)",
-          opacity: 0.7,
+          opacity: 0.85,
           willChange: "transform, background-position",
           transform: "translateZ(0)",
           maskImage: `
@@ -273,7 +273,7 @@ const Hero = () => {
               ref={subtitleRef}
               className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400"
             >
-              & Creative Design
+              & Creative Designer
             </span>
           </h1>
 
