@@ -279,7 +279,7 @@ const Hero = () => {
 
           <p
             ref={descriptionRef}
-            className="text-base sm:text-lg md:text-xl text-zinc-300 mb-8 sm:mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0"
+            className="text-base sm:text-lg md:text-xl text-zinc-200 mb-8 sm:mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0"
           >
             Transforming ideas into powerful digital experiences through
             <br className="hidden sm:block" />
@@ -306,7 +306,7 @@ const Hero = () => {
               </div>
               <a
                 href="#work"
-                className="relative px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base bg-zinc-800/50 text-zinc-300 hover:text-white transition-all duration-300 flex items-center justify-center w-full sm:min-w-[180px]"
+                className="relative px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base bg-zinc-800/50 text-zinc-200 hover:text-white transition-all duration-300 flex items-center justify-center w-full sm:min-w-[180px]"
               >
                 <span className="inline-flex items-center uppercase">
                   See my work

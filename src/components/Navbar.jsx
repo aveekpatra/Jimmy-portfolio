@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useMemo } from "react";
 import PropTypes from "prop-types";
 
 const Navbar = ({ navOpen }) => {
@@ -12,14 +12,17 @@ const Navbar = ({ navOpen }) => {
   // Cache DOM elements for each section.
   const sectionsRef = useRef([]);
 
-  const navItems = [
-    { label: "Home", link: "#home" },
-    { label: "About", link: "#about" },
-    { label: "Work", link: "#experience" },
-    { label: "Skills", link: "#skill" },
-    { label: "Projects", link: "#work" },
-    { label: "Contact", link: "#contact" },
-  ];
+  const navItems = useMemo(
+    () => [
+      { label: "Home", link: "#home" },
+      { label: "About", link: "#about" },
+      { label: "Work", link: "#experience" },
+      { label: "Skills", link: "#skill" },
+      { label: "Projects", link: "#work" },
+      { label: "Contact", link: "#contact" },
+    ],
+    []
+  );
 
   // Update the "active-box" position to match the active link.
   const initActiveBox = () => {

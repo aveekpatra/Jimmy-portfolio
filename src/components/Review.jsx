@@ -1,7 +1,7 @@
 /** * Node modules */
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 /** * Register gsap plugins */
 // gsap.registerPlugin(ScrollTrigger);
@@ -80,7 +80,9 @@ const Review = () => {
       ref={containerRef}
     >
       <div className="my-5">
-        <h2 className="container headline-2 mb-8 reveal-up">What the customers say</h2>
+        <h2 className="container headline-2 mb-8 reveal-up">
+          What the customers say
+        </h2>
         <div className="scrub-slide flex items-stretch gap-3 w-fit">
           {reviews.map(({ content, name, imgSrc, company }, key) => (
             <ReviewCard

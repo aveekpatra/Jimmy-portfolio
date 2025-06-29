@@ -12,6 +12,8 @@ html {
 
 body {
   @apply bg-zinc-900 text-zinc-50;
+  font-family: "Lexend Deca", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
 /* ---------------------------------- *\

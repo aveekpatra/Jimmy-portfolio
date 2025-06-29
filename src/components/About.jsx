@@ -1,4 +1,4 @@
-import { Code, Users, Award, Coffee, Github, Linkedin } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 
 const aboutItems = [
   {
@@ -11,19 +11,6 @@ const aboutItems = [
   },
 ];
 
-const skills = [
-  "React.js",
-  "Next.js",
-  "TypeScript",
-  "Node.js",
-  "Python",
-  "PostgreSQL",
-  "MongoDB",
-  "Tailwind CSS",
-  "GSAP",
-  "Figma",
-];
-
 const About = () => {
   return (
     <section id="about" className="section">
@@ -32,7 +19,7 @@ const About = () => {
           <h2 className="headline-2 text-center mb-12 md:mb-16 reveal-up">
             About Me
           </h2>
-          <p className="text-zinc-300 mb-4 md:mb-8 md:text-xl md:max-w-full font-light">
+          <p className="text-zinc-200 mb-4 md:mb-8 md:text-xl md:max-w-full font-light">
             Hello, I&apos;m Aveek, a passionate full-stack developer who
             transforms ideas into exceptional digital experiences. With a keen
             eye for design and a deep understanding of modern web technologies,
@@ -61,7 +48,7 @@ const About = () => {
                       +
                     </span>
                   </div>
-                  <p className="text-sm text-zinc-400">{label}</p>
+                  <p className="text-sm text-zinc-300">{label}</p>
                 </div>
               ))}
             </div>
