@@ -23,69 +23,81 @@ const Hero = () => {
     const description = descriptionRef.current;
     const buttons = buttonsRef.current;
 
-    // Hero content animation timeline
-    const heroTL = gsap.timeline({ delay: 0.3 });
+    // Wait for layout to be established, especially important on mobile
+    const initAnimation = () => {
+      // Hero content animation timeline
+      const heroTL = gsap.timeline({ delay: 0.3 });
 
-    // Set initial states
-    gsap.set([profile, title, subtitle, description, buttons], {
-      opacity: 0,
-      y: 30,
-      scale: 0.95,
+      // Set initial states with proper mobile handling
+      gsap.set([profile, title, subtitle, description, buttons], {
+        opacity: 0,
+        y: 20, // Reduced from 30 for better mobile experience
+        scale: 0.98, // Less dramatic scale for mobile
+        clearProps: "transform", // Clear any existing transforms
+      });
+
+      // Animate elements in sequence
+      heroTL
+        .to(profile, {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: "power2.out",
+        })
+        .to(
+          title,
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.9,
+            ease: "power2.out",
+          },
+          "-=0.4"
+        )
+        .to(
+          subtitle,
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            ease: "power2.out",
+          },
+          "-=0.5"
+        )
+        .to(
+          description,
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            ease: "power2.out",
+          },
+          "-=0.4"
+        )
+        .to(
+          buttons,
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.9,
+            ease: "power2.out",
+          },
+          "-=0.3"
+        );
+
+      return heroTL;
+    };
+
+    // Use requestAnimationFrame to ensure DOM is ready
+    let heroTL;
+    const animationFrame = requestAnimationFrame(() => {
+      heroTL = initAnimation();
     });
-
-    // Animate elements in sequence
-    heroTL
-      .to(profile, {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.8,
-        ease: "power2.out",
-      })
-      .to(
-        title,
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.9,
-          ease: "power2.out",
-        },
-        "-=0.4"
-      )
-      .to(
-        subtitle,
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.8,
-          ease: "power2.out",
-        },
-        "-=0.5"
-      )
-      .to(
-        description,
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.8,
-          ease: "power2.out",
-        },
-        "-=0.4"
-      )
-      .to(
-        buttons,
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.9,
-          ease: "power2.out",
-        },
-        "-=0.3"
-      );
 
     // Create a master timeline for coordinated animations
     const masterTL = gsap.timeline({ repeat: -1 });
@@ -143,7 +155,8 @@ const Hero = () => {
 
     return () => {
       masterTL.kill();
-      heroTL.kill();
+      if (heroTL) heroTL.kill();
+      cancelAnimationFrame(animationFrame);
     };
   }, []);
 
