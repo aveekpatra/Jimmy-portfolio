@@ -342,7 +342,7 @@ const Hero = () => {
                 <div className="w-full h-full rounded-full bg-zinc-900"></div>
               </div>
               <a
-                href="https://vt5eyv1e1r.ufs.sh/f/Ozz7E6ivPF5CM5gDdPij189Sb6lNsuDW7FR5Lzkwhx0vemYU"
+                href="https://vt5eyv1e1r.ufs.sh/f/Ozz7E6ivPF5C9bD340v6BYRlFUxjwcgMTE2ZDmWAOo54heXK"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base bg-white text-zinc-900 hover:bg-zinc-100 transition-all duration-300 flex items-center justify-center w-full sm:min-w-[180px]"
